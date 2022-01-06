@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 808a885c4b8335f45a9a310dcab5bc81
+  m_SerializeEntries:
+  - m_GUID: 31f80261e4e32854fa0453826ca4ff13
+    m_Address: Assets/ScriptableObjects/BlockFactorys/ReforgedRoadFactory.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0ce539e9942046f4dbf607b62d64677e
+    m_Address: Assets/Prefabs/Reforged
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1624ff651b6b20f41a24e99158a39d77
+    m_Address: Assets/Prefabs/Reforged/Road.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c65b1ad37b7769e4385ff4a3bf6d8875, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9b4f2c0e8ec9f964c9055173742b1b26, type: 2}
+    - {fileID: 11400000, guid: 10b8f49456b65324e85a1a48a7552bbe, type: 2}
