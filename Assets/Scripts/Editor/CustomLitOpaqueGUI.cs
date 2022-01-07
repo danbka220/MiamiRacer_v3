@@ -4,6 +4,7 @@ using UnityEditor;
 public class CustomLitOpaqueGUI : ShaderGUI
 {
     MaterialProperty _mainTex;
+    MaterialProperty _colorMask;
     MaterialProperty _albedoColor;
     MaterialProperty _normalMap;
     MaterialProperty _normalOffset;
@@ -19,6 +20,7 @@ public class CustomLitOpaqueGUI : ShaderGUI
     public override void OnGUI(MaterialEditor materialEditor, MaterialProperty[] properties)
     {
         _mainTex = FindProperty("_MainTex", properties);
+        _colorMask = ShaderGUI.FindProperty("_ColorMask", properties);
         _albedoColor = FindProperty("_MainColor", properties);
         _normalMap = FindProperty("_NormalMap", properties);
         _normalOffset = FindProperty("_NormalOffset", properties);
@@ -29,6 +31,7 @@ public class CustomLitOpaqueGUI : ShaderGUI
         _smoothnessIntensity = FindProperty("_SmoothnessIntensity", properties);
 
         materialEditor.ShaderProperty(_mainTex, _mainTex.displayName);
+        materialEditor.ShaderProperty(_colorMask, _colorMask.displayName);
         materialEditor.ShaderProperty(_albedoColor, _albedoColor.displayName);
         EditorGUILayout.Space(8f);
         materialEditor.ShaderProperty(_normalMap, _normalMap.displayName);
