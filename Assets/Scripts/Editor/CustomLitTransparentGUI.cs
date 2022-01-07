@@ -5,6 +5,7 @@ public class CustomLitTransparentGUI : ShaderGUI
 {
     MaterialProperty _mainTex;
     MaterialProperty _mainColor;
+    MaterialProperty _emission;
     MaterialProperty _emissionMap;
     MaterialProperty _emissionIntensity;
     MaterialProperty _specularColor;
@@ -15,6 +16,7 @@ public class CustomLitTransparentGUI : ShaderGUI
     {
         _mainTex = ShaderGUI.FindProperty("_MainTex", properties);
         _mainColor = ShaderGUI.FindProperty("_MainColor", properties);
+        _emission = ShaderGUI.FindProperty("_Emission", properties);
         _emissionMap = ShaderGUI.FindProperty("_EmissionMap", properties);
         _emissionIntensity = ShaderGUI.FindProperty("_EmissionIntensity", properties);
         _specularColor = ShaderGUI.FindProperty("_SpecularColor", properties);
@@ -24,6 +26,7 @@ public class CustomLitTransparentGUI : ShaderGUI
         materialEditor.ShaderProperty(_mainTex, _mainTex.displayName);
         materialEditor.ShaderProperty(_mainColor, _mainColor.displayName);
         EditorGUILayout.Space(10f);
+        materialEditor.ShaderProperty(_emission, _emission.displayName);
         materialEditor.ShaderProperty(_emissionMap, _emissionMap.displayName);
         materialEditor.ShaderProperty(_emissionIntensity, _emissionIntensity.displayName);
         EditorGUILayout.Space(10f);
