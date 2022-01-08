@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _movableObject;
+    [SerializeField] private GameObject _movableObject;
 
     private IMovable _movable;
 
