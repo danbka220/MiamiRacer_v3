@@ -2404,7 +2404,7 @@
     "isMainTexture": false,
     "useTilingAndOffset": true,
     "m_Modifiable": true,
-    "m_DefaultType": 0
+    "m_DefaultType": 1
 }
 
 {
@@ -3635,7 +3635,7 @@
     "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_912297565366409ebc3572f2e90e4784",
     "m_OverrideReferenceName": "_CurveY",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_Precision": 0,
@@ -4198,7 +4198,7 @@
     "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_b7b366a4f7b44aef9705c01087479ee1",
     "m_OverrideReferenceName": "_CurveX",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_Precision": 0,
@@ -5316,7 +5316,7 @@
     "m_AlphaClip": false,
     "m_CastShadows": true,
     "m_ReceiveShadows": true,
-    "m_CustomEditorGUI": "CustomLitOpaqueGUI",
+    "m_CustomEditorGUI": "",
     "m_SupportVFX": false
 }
 

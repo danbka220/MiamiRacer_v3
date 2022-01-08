@@ -1168,7 +1168,7 @@
     "m_RefNameGeneratedByDisplayName": "CurveX",
     "m_DefaultReferenceName": "_CurveX",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_Precision": 0,
@@ -1863,7 +1863,7 @@
     "m_RefNameGeneratedByDisplayName": "CurveY",
     "m_DefaultReferenceName": "_CurveY",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_Precision": 0,
@@ -3542,7 +3542,7 @@
     "m_AlphaClip": false,
     "m_CastShadows": true,
     "m_ReceiveShadows": true,
-    "m_CustomEditorGUI": "CustomLitTransparentGUI",
+    "m_CustomEditorGUI": "",
     "m_SupportVFX": false
 }
 

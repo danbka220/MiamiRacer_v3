@@ -643,11 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _curveX: 0
-  _curveY: 0.73
-  _materials:
-  - {fileID: 2100000, guid: 0e63f0202498042408875cc971a14106, type: 2}
-  - {fileID: 2100000, guid: b58a0d4d0d84e8a44adbb1c5ac81e110, type: 2}
-  - {fileID: 2100000, guid: a4820949b45f73a42bb136008943b09a, type: 2}
+  _curveY: 0.07
 --- !u!1001 &1344338591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -756,7 +752,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.8301282, y: 1}
+    m_SensorSize: {x: 2.5, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
