@@ -14,8 +14,10 @@ public class ReforgedCar : CarBase
 
     public override void Move(Vector3 direction)
     {
-        if (direction.x != 0 && !_sequence.IsActive() && !_isPressed)
+        if (direction.x != 0 && !_isPressed)
         {
+            if (_sequence.active) _sequence.Kill();
+            
             _isPressed = true;
             _sequence = DOTween.Sequence();
             _sequence.Append(_rigidbody.DOMoveX(direction.x * 5, _sideSpeed));
