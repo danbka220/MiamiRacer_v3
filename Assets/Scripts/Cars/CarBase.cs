@@ -12,5 +12,15 @@ public abstract class CarBase : MonoBehaviour, IMovable
         _rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void FixedUpdate()
+    {
+        MoveForward(_speed);
+    }
+
+    private void MoveForward(float speed)
+    {
+        _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, _rigidbody.velocity.y, speed * Time.deltaTime);
+    }
+
     public abstract void Move(Vector3 direction);
 }

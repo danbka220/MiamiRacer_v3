@@ -8,7 +8,7 @@ public class FloatingOrigin : MonoBehaviour
     [SerializeField]
     private float _threshold = 100f;
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Vector3 refPosition = _referenceTransform.position;
 
@@ -21,6 +21,6 @@ public class FloatingOrigin : MonoBehaviour
     private void MoveOrigin(Vector3 offset)
     {
         foreach (GameObject g in SceneManager.GetActiveScene().GetRootGameObjects())
-            g.transform.position -= offset;
+            g.transform.position -= new Vector3(0,0,offset.z);
     }
 }
