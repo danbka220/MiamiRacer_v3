@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6652725513331149018, guid: c8f6ad0ea44b0b14f8b006c993c5b0b5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 527e75eb37d7b314e81d5c157ee4a4b5, type: 2}
     - target: {fileID: 919132149155446097, guid: c8f6ad0ea44b0b14f8b006c993c5b0b5, type: 3}
       propertyPath: m_Name
       value: Ford
