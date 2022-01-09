@@ -1,43 +1,83 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AddressableAssets;
 using UnityEngine;
 
 public class ObjectGenerator : MonoBehaviour
 {
     [SerializeField] private CarBase _car;
-    [SerializeField] private GameObject[] _objects;
-    private List<GameObject> _spawnedObjects = new List<GameObject>();
+    [SerializeField] private AssetReferenceT<ObjectsData> _factory;
+    [SerializeField] private int _instanceCount;
+    [SerializeField] private int _pooledCount;
+    [SerializeField] private float _spacing;
+    [SerializeField] private float _despawnDistance;
+    private ObjectPool<Block> _pool = new ObjectPool<Block>();
+    private List<Block> _instantiated = new List<Block>();
 
-    private void Start()
+    private bool inited = false;
+
+    private async void Start()
     {
-        for(int i = 0; i < 20; i++)
+        ObjectsData data = await Addressables.LoadAssetAsync<ObjectsData>(_factory).Task;
+        
+        foreach(Block go in data.Prefabs)
         {
-            GameObject go = Instantiate(_objects[Random.Range(0, _objects.Length)], transform);
-            if (_spawnedObjects.Count != 0)
+            for(int i = 0; i < _pooledCount; i++)
             {
-                Mesh mesh = _spawnedObjects[_spawnedObjects.Count - 1].GetComponent<MeshFilter>().sharedMesh;
-                float posz = _spawnedObjects[_spawnedObjects.Count - 1].transform.position.z + mesh.bounds.size.z;
-                go.transform.position = new Vector3(transform.position.x, transform.position.y, posz);
+                Block obj = Instantiate(data.Prefabs[Random.Range(0, data.Prefabs.Length)], transform);
+                obj.gameObject.SetActive(false);
+                _pool.Put(obj);
             }
-            else
-            {
-                go.transform.position = transform.position;
-            }
-            _spawnedObjects.Add(go);
         }
+
+        Addressables.Release(data);
+
+        for(int i = 0; i < _instanceCount; i++)
+        {
+            Spawn();
+        }
+
+        inited = true;
     }
 
     private void Update()
     {
-        if(_car.transform.position.z - _spawnedObjects[0].transform.position.z > 20f)
+        if (!inited) return;
+
+        if(Mathf.Abs(_car.transform.position.z - _instantiated[0].transform.position.z) > _despawnDistance)
         {
-            Destroy(_spawnedObjects[0]);
-            _spawnedObjects.RemoveAt(0);
-            GameObject go = Instantiate(_objects[Random.Range(0, _objects.Length)], transform);
-            Mesh mesh = _spawnedObjects[_spawnedObjects.Count - 1].GetComponent<MeshFilter>().sharedMesh;
-            float posz = _spawnedObjects[_spawnedObjects.Count - 1].transform.position.z + mesh.bounds.size.z;
-            go.transform.position = new Vector3(transform.position.x, transform.position.y, posz);
-            _spawnedObjects.Add(go);
+            Despawn();
+            Spawn();
         }
+    }
+
+    private void Spawn()
+    {
+        if (!_pool.HaveObjects) return;
+
+        Block go = _pool.GetRandom();
+
+        if(_instantiated.Count != 0)
+        {
+            Block lastBlock = _instantiated[_instantiated.Count - 1];
+            float zpos = lastBlock.transform.position.z + lastBlock.ZSize;
+            Vector3 pos = new Vector3(transform.position.x, transform.position.y, zpos + _spacing);
+            go.transform.position = pos;
+        }
+        else
+        {
+            go.transform.position = transform.position;
+        }
+
+        go.gameObject.SetActive(true);
+        _instantiated.Add(go);
+    }
+
+    private void Despawn()
+    {
+        Block go = _instantiated[0];
+        _instantiated.Remove(go);
+        _pool.Put(go);
+        go.gameObject.SetActive(false);
     }
 }

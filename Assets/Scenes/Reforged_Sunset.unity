@@ -184,11 +184,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _car: {fileID: 1219268564}
-  _objects:
-  - {fileID: 6607856671053688822, guid: 016955be2d221cc47bab41695f4dae38, type: 3}
-  - {fileID: 2855224101822956757, guid: 5c6d7b02c4359874db973a6f5066fb7f, type: 3}
-  - {fileID: 4163393213832124549, guid: d3bd4e68ba409a842b48a87910034a4a, type: 3}
-  - {fileID: 1107730668246301865, guid: ea3b32139a0251844aa43165de1708a4, type: 3}
+  _factory:
+    m_AssetGUID: afbeba0c58972b54e8bd3ea89aa9ca01
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _instanceCount: 20
+  _pooledCount: 10
+  _spacing: 5
+  _despawnDistance: 100
 --- !u!4 &597452714
 Transform:
   m_ObjectHideFlags: 0
@@ -533,8 +537,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _car: {fileID: 1219268564}
-  _objects:
-  - {fileID: 8178641418132294389, guid: 1624ff651b6b20f41a24e99158a39d77, type: 3}
+  _factory:
+    m_AssetGUID: 0ce4cc12276c4fa419d4fddd6b2cb60b
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _instanceCount: 20
+  _pooledCount: 10
+  _spacing: 0
+  _despawnDistance: 100
 --- !u!4 &1088905265
 Transform:
   m_ObjectHideFlags: 0

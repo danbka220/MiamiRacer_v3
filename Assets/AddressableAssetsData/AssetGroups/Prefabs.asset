@@ -10,16 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Reforged
+  m_Name: Prefabs
   m_EditorClassIdentifier: 
-  m_GroupName: Packed Assets
+  m_GroupName: Prefabs
   m_Data:
     m_SerializedData: []
-  m_GUID: fe8ba53e8c20bf6419a56a9d77e4bf91
-  m_SerializeEntries: []
+  m_GUID: ba1cb8206494e6f4e974fa458b0dd1ac
+  m_SerializeEntries:
+  - m_GUID: 0ce539e9942046f4dbf607b62d64677e
+    m_Address: Assets/Prefabs/Reforged
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c65b1ad37b7769e4385ff4a3bf6d8875, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 03b9016cb7d59ab448cba3610678185a, type: 2}
-    - {fileID: 11400000, guid: 498f9ead52be1e545b435fd29a1d9d8c, type: 2}
+    - {fileID: 11400000, guid: f7390320fc031854a98def66f1f1b5de, type: 2}
+    - {fileID: 11400000, guid: bdcc27bc78e5cb044ba4a9123798f1e0, type: 2}

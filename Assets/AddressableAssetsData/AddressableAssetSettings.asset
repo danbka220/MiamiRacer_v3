@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: AddressableAssetSettings
   m_EditorClassIdentifier: 
   m_DefaultGroup: 808a885c4b8335f45a9a310dcab5bc81
+  m_CachedHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -21,6 +24,7 @@ MonoBehaviour:
   m_IgnoreUnsupportedFilesInBuild: 0
   m_UniqueBundleIds: 0
   m_NonRecursiveBuilding: 0
+  m_CCDEnabled: 0
   m_maxConcurrentWebRequests: 500
   m_ContiguousBundles: 0
   m_StripUnityVersionFromBundleBuild: 0
@@ -34,11 +38,13 @@ MonoBehaviour:
   m_RemoteCatalogLoadPath:
     m_Id: 67cbcc580dc7f7b4c94a9c8b596cdad4
   m_ContentStateBuildPath: 
+  m_BuildAddressablesWithPlayerBuild: 2
   m_overridePlayerVersion: 
   m_GroupAssets:
   - {fileID: 11400000, guid: 9828f1fa861a0d04fa049e6eca3bbaf2, type: 2}
   - {fileID: 11400000, guid: c4bb63f91a568b949bf11e0eb657da78, type: 2}
   - {fileID: 11400000, guid: d1f8aeec12df7e049a006f156388d5ff, type: 2}
+  - {fileID: 11400000, guid: 3e4c49701b1c01046855a40f15eefd31, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
