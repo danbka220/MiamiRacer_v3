@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 using UnityEngine;
 
-public class ObjectGenerator : MonoBehaviour
+public abstract class ObjectGenerator : MonoBehaviour
 {
     [SerializeField] private CarBase _car;
     [SerializeField] private AssetReferenceT<ObjectsData> _factory;
     [SerializeField] private int _instanceCount;
     [SerializeField] private int _pooledCount;
-    [SerializeField] private float _spacing;
     [SerializeField] private float _despawnDistance;
-    private ObjectPool<Block> _pool = new ObjectPool<Block>();
-    private List<Block> _instantiated = new List<Block>();
+    protected ObjectPool<BlockBase> _pool = new ObjectPool<BlockBase>();
+    protected List<BlockBase> _instantiated = new List<BlockBase>();
 
     private bool inited = false;
 
@@ -20,11 +19,11 @@ public class ObjectGenerator : MonoBehaviour
     {
         ObjectsData data = await Addressables.LoadAssetAsync<ObjectsData>(_factory).Task;
         
-        foreach(Block go in data.Prefabs)
+        foreach(BlockBase go in data.Prefabs)
         {
             for(int i = 0; i < _pooledCount; i++)
             {
-                Block obj = Instantiate(data.Prefabs[Random.Range(0, data.Prefabs.Length)], transform);
+                BlockBase obj = Instantiate(data.Prefabs[Random.Range(0, data.Prefabs.Length)], transform);
                 obj.gameObject.SetActive(false);
                 _pool.Put(obj);
             }
@@ -51,33 +50,7 @@ public class ObjectGenerator : MonoBehaviour
         }
     }
 
-    private void Spawn()
-    {
-        if (!_pool.HaveObjects) return;
+    protected abstract void Spawn();
 
-        Block go = _pool.GetRandom();
-
-        if(_instantiated.Count != 0)
-        {
-            Block lastBlock = _instantiated[_instantiated.Count - 1];
-            float zpos = lastBlock.transform.position.z + lastBlock.ZSize;
-            Vector3 pos = new Vector3(transform.position.x, transform.position.y, zpos + _spacing);
-            go.transform.position = pos;
-        }
-        else
-        {
-            go.transform.position = transform.position;
-        }
-
-        go.gameObject.SetActive(true);
-        _instantiated.Add(go);
-    }
-
-    private void Despawn()
-    {
-        Block go = _instantiated[0];
-        _instantiated.Remove(go);
-        _pool.Put(go);
-        go.gameObject.SetActive(false);
-    }
+    protected abstract void Despawn();
 }

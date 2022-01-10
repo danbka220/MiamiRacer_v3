@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Block : MonoBehaviour
+public abstract class BlockBase : MonoBehaviour
 {
     public float ZSize => _zsize;
     private float _zsize;

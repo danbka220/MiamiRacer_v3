@@ -12,8 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b43f0e9f80ecdb4fa18ceae4558b4e6, type: 3}
   m_Name: LeftSide
   m_EditorClassIdentifier: 
-  _prefabs:
-  - {fileID: -786655118979449334, guid: 016955be2d221cc47bab41695f4dae38, type: 3}
-  - {fileID: -1129859063278755051, guid: 5c6d7b02c4359874db973a6f5066fb7f, type: 3}
-  - {fileID: -1418661318182330277, guid: d3bd4e68ba409a842b48a87910034a4a, type: 3}
-  - {fileID: 6146807684382467155, guid: ea3b32139a0251844aa43165de1708a4, type: 3}
+  _prefabs: []
