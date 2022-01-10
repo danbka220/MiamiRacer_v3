@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockGenerator : ObjectGenerator
+public class BlockGenerator : ObjectGenerator<StandartBlock>
 {
     [SerializeField] private float _spacing;
 
@@ -10,11 +10,11 @@ public class BlockGenerator : ObjectGenerator
     {
         if (!_pool.HaveObjects) return;
 
-        BlockBase go = _pool.GetRandom(); 
+        StandartBlock go = _pool.GetRandom(); 
 
         if (_instantiated.Count != 0)
         {
-            BlockBase lastBlock = _instantiated[_instantiated.Count - 1];
+            StandartBlock lastBlock = _instantiated[_instantiated.Count - 1];
             float zpos = lastBlock.transform.position.z + lastBlock.ZSize;
             Vector3 pos = new Vector3(transform.position.x, transform.position.y, zpos + _spacing);
             go.transform.position = pos;
@@ -30,7 +30,7 @@ public class BlockGenerator : ObjectGenerator
 
     protected override void Despawn()
     {
-        BlockBase go = _instantiated[0];
+        StandartBlock go = _instantiated[0];
         _instantiated.Remove(go);
         _pool.Put(go);
         go.gameObject.SetActive(false);

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 using UnityEngine;
 
-public abstract class ObjectGenerator : MonoBehaviour
+public abstract class ObjectGenerator<T> : MonoBehaviour where T : BlockBase
 {
     [SerializeField] private CarBase _car;
     [SerializeField] private AssetReferenceT<ObjectsData> _factory;
     [SerializeField] private int _instanceCount;
     [SerializeField] private int _pooledCount;
     [SerializeField] private float _despawnDistance;
-    protected ObjectPool<BlockBase> _pool = new ObjectPool<BlockBase>();
-    protected List<BlockBase> _instantiated = new List<BlockBase>();
+    protected ObjectPool<T> _pool = new ObjectPool<T>();
+    protected List<T> _instantiated = new List<T>();
 
     private bool inited = false;
 
@@ -23,7 +23,7 @@ public abstract class ObjectGenerator : MonoBehaviour
         {
             for(int i = 0; i < _pooledCount; i++)
             {
-                BlockBase obj = Instantiate(data.Prefabs[Random.Range(0, data.Prefabs.Length)], transform);
+                T obj = (T)Instantiate(data.Prefabs[Random.Range(0, data.Prefabs.Length)], transform);
                 obj.gameObject.SetActive(false);
                 _pool.Put(obj);
             }

@@ -10,10 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b43f0e9f80ecdb4fa18ceae4558b4e6, type: 3}
-  m_Name: LeftSide
+  m_Name: Traffic
   m_EditorClassIdentifier: 
   _prefabs:
-  - {fileID: 5985943385300682485, guid: 016955be2d221cc47bab41695f4dae38, type: 3}
-  - {fileID: 1121818122769968308, guid: 5c6d7b02c4359874db973a6f5066fb7f, type: 3}
-  - {fileID: 6847999015500307615, guid: d3bd4e68ba409a842b48a87910034a4a, type: 3}
-  - {fileID: -1550190616218103880, guid: ea3b32139a0251844aa43165de1708a4, type: 3}
+  - {fileID: 4010467372174370343, guid: cfc1d43ec3d848741ade75a1f8d50a8d, type: 3}
