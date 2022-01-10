@@ -207,7 +207,7 @@ MonoBehaviour:
   _instanceCount: 20
   _pooledCount: 10
   _despawnDistance: 100
-  _spacing: 0
+  _spacing: 10
 --- !u!1 &689927222
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +560,7 @@ MonoBehaviour:
   _instanceCount: 20
   _pooledCount: 10
   _despawnDistance: 100
-  _spacing: 10
+  _spacing: 0
 --- !u!1 &1094899267
 GameObject:
   m_ObjectHideFlags: 0
