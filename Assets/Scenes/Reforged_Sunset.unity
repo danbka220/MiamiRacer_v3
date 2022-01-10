@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 597452714}
-  - component: {fileID: 597452713}
+  - component: {fileID: 597452715}
   m_Layer: 0
   m_Name: LeftSideGenerator
   m_TagString: Untagged
@@ -171,28 +171,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &597452713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597452712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3c36f8476c2361408017da3b6e474f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _car: {fileID: 1219268564}
-  _factory:
-    m_AssetGUID: afbeba0c58972b54e8bd3ea89aa9ca01
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  _instanceCount: 20
-  _pooledCount: 10
-  _spacing: 5
-  _despawnDistance: 100
 --- !u!4 &597452714
 Transform:
   m_ObjectHideFlags: 0
@@ -208,6 +186,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &597452715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597452712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7433829ff0e1ed14c8da0537750c08a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _car: {fileID: 1219268564}
+  _factory:
+    m_AssetGUID: afbeba0c58972b54e8bd3ea89aa9ca01
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _instanceCount: 20
+  _pooledCount: 10
+  _despawnDistance: 100
+  _spacing: 10
 --- !u!1 &689927222
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +238,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1094899268}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &712763711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 712763713}
+  - component: {fileID: 712763712}
+  m_Layer: 0
+  m_Name: TrafficGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &712763712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712763711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6514c68ad079ee24e92145fd7559f772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _car: {fileID: 1219268564}
+  _factory:
+    m_AssetGUID: 7601b9b6395182a4e89f5174224c781b
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _instanceCount: 10
+  _pooledCount: 20
+  _despawnDistance: 100
+  _lines:
+  - {fileID: 689927223}
+  - {fileID: 1696289127}
+  - {fileID: 375816102}
+--- !u!4 &712763713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712763711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &854126688
 GameObject:
@@ -516,7 +573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1088905265}
-  - component: {fileID: 1088905264}
+  - component: {fileID: 1088905266}
   m_Layer: 0
   m_Name: RoadGenerator
   m_TagString: Untagged
@@ -524,28 +581,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1088905264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088905263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3c36f8476c2361408017da3b6e474f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _car: {fileID: 1219268564}
-  _factory:
-    m_AssetGUID: 0ce4cc12276c4fa419d4fddd6b2cb60b
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  _instanceCount: 20
-  _pooledCount: 10
-  _spacing: 0
-  _despawnDistance: 100
 --- !u!4 &1088905265
 Transform:
   m_ObjectHideFlags: 0
@@ -561,6 +596,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1088905266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088905263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7433829ff0e1ed14c8da0537750c08a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _car: {fileID: 1219268564}
+  _factory:
+    m_AssetGUID: 0ce4cc12276c4fa419d4fddd6b2cb60b
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _instanceCount: 20
+  _pooledCount: 10
+  _despawnDistance: 100
+  _spacing: 0
 --- !u!1 &1094899267
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,6 +767,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _referenceTransform: {fileID: 1219268569}
   _threshold: 200
+  _transformsToMove:
+  - {fileID: 1219268569}
+  - {fileID: 1551311488}
+  - {fileID: 1088905265}
+  - {fileID: 597452714}
 --- !u!4 &1333314672
 Transform:
   m_ObjectHideFlags: 0
@@ -860,7 +922,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.5, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
