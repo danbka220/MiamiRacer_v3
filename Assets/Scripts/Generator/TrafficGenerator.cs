@@ -5,6 +5,8 @@ using UnityEngine;
 public class TrafficGenerator : ObjectGenerator<TrafficBlock>
 {
     [SerializeField] private Transform[] _lines;
+    [SerializeField] private float _minSpace;
+    [SerializeField] private float _maxSpace;
 
     protected override void Spawn()
     {
@@ -14,8 +16,10 @@ public class TrafficGenerator : ObjectGenerator<TrafficBlock>
 
         if (_instantiated.Count != 0)
         {
+            float space = Random.Range(_minSpace, _maxSpace);
+
             TrafficBlock lastBlock = _instantiated[_instantiated.Count - 1];
-            float zpos = lastBlock.transform.position.z + lastBlock.ZSize + go.ZSize;
+            float zpos = lastBlock.transform.position.z + (lastBlock.ZSize / 2) + (go.ZSize / 2) + space;
             Vector3 pos = new Vector3(_lines[Random.Range(0, _lines.Length)].position.x, transform.position.y, zpos);
             go.transform.position = pos;
         }

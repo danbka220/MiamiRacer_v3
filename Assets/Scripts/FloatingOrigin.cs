@@ -19,7 +19,9 @@ public class FloatingOrigin : MonoBehaviour
 
     private void MoveOrigin(Vector3 offset)
     {
-        foreach (Transform g in _transformsToMove)
-            g.position -= new Vector3(0,0,offset.z);
+        for (int i = 0; i < _transformsToMove.Length; i++)
+        {
+            _transformsToMove[i].position -= new Vector3(0, 0, offset.z);
+        } 
     }
 }

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8646609530797851814}
   - component: {fileID: 6025130201800807025}
   - component: {fileID: 8917833254784969330}
-  - component: {fileID: 775218646602381683}
   - component: {fileID: 3898298520984028477}
+  - component: {fileID: 7984491408091929018}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8178641418132294389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2058,20 +2058,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8178641418132294389}
   m_Mesh: {fileID: 0}
---- !u!64 &775218646602381683
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8178641418132294389}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &3898298520984028477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,3 +2071,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mesh: {fileID: 8917833254784969330}
+--- !u!65 &7984491408091929018
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8178641418132294389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.1078005, y: 2.8421818e-14, z: 30}
+  m_Center: {x: -0.053900123, y: 8.80769e-16, z: 0}
