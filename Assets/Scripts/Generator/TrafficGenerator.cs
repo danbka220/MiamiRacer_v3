@@ -8,6 +8,9 @@ public class TrafficGenerator : ObjectGenerator<TrafficBlock>
     [SerializeField] private float _minSpace;
     [SerializeField] private float _maxSpace;
 
+    private WeightedPool<TrafficBlock> _pool = new WeightedPool<TrafficBlock>();
+    protected override ObjectPool<TrafficBlock> Pool => _pool;
+
     protected override void Spawn()
     {
         if (!_pool.HaveObjects) return;

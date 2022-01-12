@@ -270,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _car: {fileID: 1219268564}
   _factory:
-    m_AssetGUID: 7601b9b6395182a4e89f5174224c781b
+    m_AssetGUID: 4a06a06d7ae42064ebe6272bb8e7e346
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
@@ -465,7 +465,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 250
+  far clip plane: 180
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -844,7 +844,7 @@ MonoBehaviour:
     FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 250
+    FarClipPlane: 180
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}

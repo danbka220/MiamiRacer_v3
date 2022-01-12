@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8817271086443220181}
   - component: {fileID: 4010467372174370343}
   m_Layer: 0
-  m_Name: Ford
+  m_Name: Ford-Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mesh: {fileID: 3254783418407765212}
+  SpawnChance: 50
 --- !u!1 &8432549473392217942
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +110,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a5b58c5881fda804f84d3785f858c2c7, type: 2}
+  - {fileID: 2100000, guid: 0b2ad271c37d8a24ab3d0be262c32f90, type: 2}
   - {fileID: 2100000, guid: b58a0d4d0d84e8a44adbb1c5ac81e110, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
