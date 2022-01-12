@@ -5,6 +5,8 @@ using UnityEngine;
 public class BlockGenerator : ObjectGenerator<StandartBlock>
 {
     [SerializeField] private float _spacing;
+    [SerializeField] private NonWeightedPool<StandartBlock> _pool = new NonWeightedPool<StandartBlock>();
+    protected override ObjectPool<StandartBlock> Pool => _pool;
 
     protected override void Spawn()
     {

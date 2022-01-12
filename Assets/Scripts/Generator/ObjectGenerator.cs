@@ -10,7 +10,7 @@ public abstract class ObjectGenerator<T> : MonoBehaviour where T : BlockBase
     [SerializeField] private int _instanceCount;
     [SerializeField] private int _pooledCount;
     [SerializeField] private float _despawnDistance;
-    protected ObjectPool<T> _pool = new ObjectPool<T>();
+    protected abstract ObjectPool<T> Pool { get; }
     protected List<T> _instantiated = new List<T>();
 
     private bool inited = false;
@@ -18,25 +18,35 @@ public abstract class ObjectGenerator<T> : MonoBehaviour where T : BlockBase
     private async void Start()
     {
         ObjectsData data = await Addressables.LoadAssetAsync<ObjectsData>(_factory).Task;
-        
-        foreach(BlockBase go in data.Prefabs)
-        {
-            for(int i = 0; i < _pooledCount; i++)
-            {
-                T obj = (T)Instantiate(data.Prefabs[Random.Range(0, data.Prefabs.Length)], transform);
-                obj.gameObject.SetActive(false);
-                _pool.Put(obj);
-            }
-        }
+
+        InitPool(data);
 
         Addressables.Release(data);
 
-        for(int i = 0; i < _instanceCount; i++)
+        for (int i = 0; i < _instanceCount; i++)
         {
             Spawn();
         }
 
         inited = true;
+    }
+
+    private void InitPool(ObjectsData data)
+    {
+        for (int prefabId = 0; prefabId < data.AllBlocks.Count; prefabId++)
+        {
+            BlockBase go = data.AllBlocks[prefabId];
+            for (int i = 0; i < _pooledCount; i++)
+            {
+                if (data.AllBlocks[prefabId].GetType() != typeof(T)) throw new System.Exception(" ≈сть блок несоответствующий типу генератора");
+
+                T obj = (T)Instantiate(data.AllBlocks[prefabId], transform);
+                obj.gameObject.SetActive(false);
+                if (data is WeightedData)
+                    obj.SpawnChance = ((WeightedData)data).BlocksData[prefabId].Chance;
+                Pool.Put(obj);
+            }
+        }
     }
 
     private void Update()
