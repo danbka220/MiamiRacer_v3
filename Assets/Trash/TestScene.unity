@@ -587,7 +587,7 @@ PrefabInstance:
     - target: {fileID: -6652725513331149018, guid: a3d82e6228ab3ab49a10ea50d3f11d1d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0e63f0202498042408875cc971a14106, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b879e51d0f63f341aea5f82f6d77578, type: 2}
     - target: {fileID: 919132149155446097, guid: a3d82e6228ab3ab49a10ea50d3f11d1d, type: 3}
       propertyPath: m_Name
       value: SS
@@ -709,7 +709,7 @@ PrefabInstance:
     - target: {fileID: -6652725513331149018, guid: b1e0c17a88ffac04b899f7b727dd92c1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bd70a8b66ec421d4180306c9d8c727a0, type: 2}
+      objectReference: {fileID: 2100000, guid: c8dad8d06240bf647807115f7a8900b7, type: 2}
     - target: {fileID: 919132149155446097, guid: b1e0c17a88ffac04b899f7b727dd92c1, type: 3}
       propertyPath: m_Name
       value: Continental
