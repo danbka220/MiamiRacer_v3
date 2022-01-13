@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Traffic
   m_EditorClassIdentifier: 
   _blocksData:
-  - _prefab: {fileID: 4010467372174370343, guid: cfc1d43ec3d848741ade75a1f8d50a8d, type: 3}
-    _chance: 5
   - _prefab: {fileID: 4010467372174370343, guid: a6c6142412eb17e46896e42d69ddfa58, type: 3}
     _chance: 95
+  - _prefab: {fileID: 4010467372174370343, guid: cfc1d43ec3d848741ade75a1f8d50a8d, type: 3}
+    _chance: 5

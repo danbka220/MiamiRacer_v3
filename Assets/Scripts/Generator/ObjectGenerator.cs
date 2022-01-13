@@ -62,5 +62,11 @@ public abstract class ObjectGenerator<T> : MonoBehaviour where T : BlockBase
 
     protected abstract void Spawn();
 
-    protected abstract void Despawn();
+    protected void Despawn()
+    {
+        T go = _instantiated[0];
+        _instantiated.Remove(go);
+        Pool.Put(go);
+        go.gameObject.SetActive(false);
+    }
 }
