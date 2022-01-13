@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class TrafficBlock : BlockBase
 {
-    
+    public Transform CurrentLine;
 }

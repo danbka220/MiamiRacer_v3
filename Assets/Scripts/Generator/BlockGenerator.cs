@@ -29,12 +29,4 @@ public class BlockGenerator : ObjectGenerator<StandartBlock>
         go.gameObject.SetActive(true);
         _instantiated.Add(go);
     }
-
-    protected override void Despawn()
-    {
-        StandartBlock go = _instantiated[0];
-        _instantiated.Remove(go);
-        _pool.Put(go);
-        go.gameObject.SetActive(false);
-    }
 }

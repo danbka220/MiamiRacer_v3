@@ -275,14 +275,14 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _instanceCount: 20
-  _pooledCount: 30
+  _pooledCount: 50
   _despawnDistance: 100
   _lines:
   - {fileID: 689927223}
   - {fileID: 1696289127}
   - {fileID: 375816102}
-  _minSpace: 5
-  _maxSpace: 25
+  _minSpace: 20
+  _maxSpace: 45
 --- !u!4 &712763713
 Transform:
   m_ObjectHideFlags: 0
