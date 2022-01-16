@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8817271086443220181}
+  - component: {fileID: 6458398904449187658}
   - component: {fileID: 4010467372174370343}
   m_Layer: 0
   m_Name: Ford-Taxi
@@ -35,6 +36,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6458398904449187658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148962237150991983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c01f71f4569c54f82260fae6096de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 6808107071419964440}
+  _color: {r: 0.98039216, g: 0.9137255, b: 0, a: 1}
 --- !u!114 &4010467372174370343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,6 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mesh: {fileID: 3254783418407765212}
+  SpawnChance: 50
+  CurrentLine: {fileID: 0}
 --- !u!1 &8432549473392217942
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &330202482794921005
 Transform:
   m_ObjectHideFlags: 0

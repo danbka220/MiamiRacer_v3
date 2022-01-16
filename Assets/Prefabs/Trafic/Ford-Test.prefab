@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mesh: {fileID: 3254783418407765212}
   SpawnChance: 50
+  CurrentLine: {fileID: 0}
 --- !u!1 &8432549473392217942
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &330202482794921005
 Transform:
   m_ObjectHideFlags: 0
