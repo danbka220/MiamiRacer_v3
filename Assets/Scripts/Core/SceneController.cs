@@ -13,7 +13,7 @@ public class SceneController : MonoBehaviour
         Persistent,
         Loading,
         Menu,
-        V1
+        Reforged
     }
 
     public async void LoadScene(Scenes scene)
