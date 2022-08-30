@@ -16,18 +16,32 @@ public class SceneController : MonoBehaviour
         Reforged
     }
 
-    public async void LoadScene(Scenes scene)
+    private void Start()
     {
-        
-        AsyncOperation operation = SceneManager.LoadSceneAsync(scene.ToString(),LoadSceneMode.Additive);
-        SceneManager.LoadSceneAsync(Scenes.Loading.ToString());
+        if (SceneManager.sceneCount == 1)
+        {
+            LoadScene(Scenes.Menu);
+        }
+    }
 
+    public static async void LoadScene(Scenes scene)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(Scenes.Loading.ToString(), LoadSceneMode.Additive);
         while (!operation.isDone)
         {
             await Task.Yield();
         }
 
-        SceneManager.UnloadSceneAsync(_currentScene);
+        if (_currentScene.IsValid())
+            SceneManager.UnloadSceneAsync(_currentScene);
+
+        operation = SceneManager.LoadSceneAsync(scene.ToString(),LoadSceneMode.Additive);
+        while (!operation.isDone)
+        {
+            await Task.Yield();
+        }
+        _currentScene = SceneManager.GetSceneByName(scene.ToString());
+        
         SceneManager.UnloadSceneAsync(Scenes.Loading.ToString());
     }
 }
