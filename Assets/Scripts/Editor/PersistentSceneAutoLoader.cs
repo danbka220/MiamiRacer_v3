@@ -21,7 +21,14 @@ public static class PersistentSceneAutoLoader
         {
             if (SceneManager.GetActiveScene().name == SceneController.Scenes.Persistent.ToString())
             {
-                EditorPrefs.SetString(PREV_SCENE_PATH_KEY, SceneManager.GetActiveScene().path);
+                if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                {
+                    EditorPrefs.SetString(PREV_SCENE_PATH_KEY, SceneManager.GetActiveScene().path);
+                }
+                else
+                {
+                    EditorApplication.ExitPlaymode();
+                }
                 return;
             }
                 
@@ -43,7 +50,7 @@ public static class PersistentSceneAutoLoader
             }
             else
             {
-                EditorApplication.isPlaying = false;
+                EditorApplication.ExitPlaymode();
             }
         }
 

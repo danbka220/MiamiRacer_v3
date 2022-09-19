@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    private static Scene _currentScene;
+    [SerializeField] private SceneFade _sceneFade;
+
+    private Scene _currentScene;
 
     public enum Scenes
     {
@@ -24,8 +26,11 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public static async void LoadScene(Scenes scene)
+    public async void LoadScene(Scenes scene)
     {
+        if (SceneManager.GetSceneAt(SceneManager.sceneCount - 1).name != Scenes.Persistent.ToString())
+            await _sceneFade.FadeIn();
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(Scenes.Loading.ToString(), LoadSceneMode.Additive);
         while (!operation.isDone)
         {
@@ -41,7 +46,13 @@ public class SceneController : MonoBehaviour
             await Task.Yield();
         }
         _currentScene = SceneManager.GetSceneByName(scene.ToString());
-        
-        SceneManager.UnloadSceneAsync(Scenes.Loading.ToString());
+
+        operation = SceneManager.UnloadSceneAsync(Scenes.Loading.ToString());
+        while (!operation.isDone)
+        {
+            await Task.Yield();
+        }
+
+        await _sceneFade.FadeOut();
     }
 }
