@@ -40,7 +40,8 @@ public static class PersistentSceneAutoLoader
                 try
                 {
                     EditorSceneManager.OpenScene(PERSISTENT_SCENE_PATH);
-                    EditorSceneManager.OpenScene(path,OpenSceneMode.Additive);
+                    Scene scene = EditorSceneManager.OpenScene(path,OpenSceneMode.Additive);
+                    EditorSceneManager.SetActiveScene(scene);
                 }
                 catch
                 {

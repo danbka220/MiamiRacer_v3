@@ -1,12 +1,16 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private SceneFade _sceneFade;
+    public static UnityEvent asdas;
 
     private Scene _currentScene;
 
@@ -46,6 +50,8 @@ public class SceneController : MonoBehaviour
             await Task.Yield();
         }
         _currentScene = SceneManager.GetSceneByName(scene.ToString());
+
+        SceneManager.SetActiveScene(_currentScene);
 
         operation = SceneManager.UnloadSceneAsync(Scenes.Loading.ToString());
         while (!operation.isDone)
