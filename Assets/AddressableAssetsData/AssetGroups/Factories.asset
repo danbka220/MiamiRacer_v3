@@ -21,6 +21,7 @@ MonoBehaviour:
     m_Address: Assets/ScriptableObjects/Factories
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c65b1ad37b7769e4385ff4a3bf6d8875, type: 2}
   m_SchemaSet:
