@@ -5,6 +5,12 @@ using UnityEngine.Events;
 
 public class ActionsHandler : MonoBehaviour
 {
+    
+    public enum Actions
+    {
+        OnPauseClickAction
+    }
+
     public UnityAction OnPauseClickAction;
     public bool ActionsLocked { get; private set; } = false;
 
@@ -21,6 +27,16 @@ public class ActionsHandler : MonoBehaviour
     public void LockActions()
     {
         ActionsLocked = true;
+    }
+
+    public void FreezeTime()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void UnfreezeTime()
+    {
+        Time.timeScale = 1;
     }
 
     public void UnlockActions()
@@ -40,6 +56,9 @@ public class ActionsHandler : MonoBehaviour
     {
         if (ActionsLocked) return;
 
-        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        if (Time.timeScale == 0)
+            UnfreezeTime();
+        else
+            FreezeTime();
     }
 }

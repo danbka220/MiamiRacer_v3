@@ -10,9 +10,9 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private SceneFade _sceneFade;
-    public static UnityEvent asdas;
 
     private Scene _currentScene;
+    private ActionsHandler _actions;
 
     public enum Scenes
     {
@@ -22,16 +22,23 @@ public class SceneController : MonoBehaviour
         Reforged
     }
 
-    private void Start()
+    private async void Start()
     {
         if (SceneManager.sceneCount == 1)
         {
-            LoadScene(Scenes.Menu);
+            await LoadScene(Scenes.Menu);
+            return;
         }
+
+        _currentScene = SceneManager.GetActiveScene();
+        _actions = FindObjectOfType<ActionsHandler>();
     }
 
-    public async void LoadScene(Scenes scene)
+    public async Task LoadScene(Scenes scene)
     {
+        _actions.LockActions();
+        _actions.FreezeTime();
+
         if (SceneManager.GetSceneAt(SceneManager.sceneCount - 1).name != Scenes.Persistent.ToString())
             await _sceneFade.FadeIn();
 
@@ -60,5 +67,8 @@ public class SceneController : MonoBehaviour
         }
 
         await _sceneFade.FadeOut();
+
+        _actions.UnlockActions();
+        _actions.UnfreezeTime();
     }
 }
