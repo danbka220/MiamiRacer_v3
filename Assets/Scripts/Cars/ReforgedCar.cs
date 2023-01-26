@@ -33,4 +33,9 @@ public class ReforgedCar : CarBase
         if (_isPressed && direction == Vector3.zero)
             _isPressed = false;
     }
+
+    private void OnDestroy()
+    {
+        _sequence.Complete();
+    }
 }

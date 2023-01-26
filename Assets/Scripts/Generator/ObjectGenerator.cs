@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 using UnityEngine;
+using System.Threading.Tasks;
 
-public abstract class ObjectGenerator<T> : MonoBehaviour where T : BlockBase
+public abstract class ObjectGenerator<T> : MonoBehaviour, IGenerator where T : BlockBase
 {
-    [SerializeField] private CarBase _car;
+    [SerializeField] protected CarBase _car;
     [SerializeField] private AssetReferenceT<ObjectsData> _factory;
     [SerializeField] private int _instanceCount;
     [SerializeField] private int _pooledCount;
@@ -15,7 +16,7 @@ public abstract class ObjectGenerator<T> : MonoBehaviour where T : BlockBase
 
     private bool inited = false;
 
-    private async void Start()
+    async Task IGenerator.Init()
     {
         ObjectsData data = await Addressables.LoadAssetAsync<ObjectsData>(_factory).Task;
 

@@ -11,7 +11,11 @@ public abstract class BlockBase : MonoBehaviour
 
     private void Awake()
     {
-        Mesh mesh = _mesh.sharedMesh;
-        _zsize = mesh.bounds.size.z;
+        Mesh mesh = _mesh ? _mesh.sharedMesh : null;
+
+        if (mesh)
+            _zsize = mesh.bounds.size.z;
+        else
+            _zsize = 0;
     }
 }

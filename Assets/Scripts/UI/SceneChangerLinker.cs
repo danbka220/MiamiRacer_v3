@@ -10,20 +10,17 @@ public class SceneChangerLinker : MonoBehaviour
     private SceneController _sceneController;
     private Button _button;
 
-    private void Awake()
+    private void Start()
     {
         _sceneController = FindObjectOfType<SceneController>();
 
         TryGetComponent<Button>(out _button);
-    }
 
-    private void OnEnable()
-    {
         if (_button)
             _button.onClick.AddListener(ChangeScene);
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         if (_button)
             _button.onClick.RemoveListener(ChangeScene);
@@ -39,6 +36,6 @@ public class SceneChangerLinker : MonoBehaviour
         if (!_sceneController)
             return;
 
-        _sceneController.LoadScene(scene);
+        _ = _sceneController.LoadScene(scene);
     }
 }
